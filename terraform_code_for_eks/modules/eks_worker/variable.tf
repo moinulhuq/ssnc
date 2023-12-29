@@ -1,6 +1,6 @@
 
-variable "eks_cluster" {
-  type    = any
+variable "eks_cluster_name" {
+  type    = string
 }
 
 variable "eks_node_group_name" {
