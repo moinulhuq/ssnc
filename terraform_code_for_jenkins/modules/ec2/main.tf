@@ -1,4 +1,3 @@
-
 # AWS Instance Key Pair
 resource "aws_key_pair" "instance_key_pair" {
   key_name   = "instance_key_pair"
