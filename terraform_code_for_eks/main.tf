@@ -52,7 +52,7 @@ module "eks_worker" {
 # eks monitoring and logging
 module "eks_monitoring_logging" {
   source = "shamimice03/eks-monitoring-logging/aws"
-  cluster_name = var.eks_name
+  cluster_name = module.eks_master.eks_cluster_name
   aws_region   = local.region
   namespace    = var.amazon_cloudwatch_namespace
   enable_cwagent    = true
