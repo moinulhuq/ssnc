@@ -33,9 +33,9 @@ module "vpc" {
 # Module aws ec2
 module "ec2" {
   source                      = "./modules/ec2"
+  ami                         = var.ami
   vm_name                     = var.vm_name
   instance_type               = var.instance_type
-  ami                         = var.ami
   associate_public_ip_address = var.associate_public_ip_address
   public_subnet               = module.vpc.public_subnet
   vpc_security_group_ids      = module.vpc.vpc_security_group_ids
