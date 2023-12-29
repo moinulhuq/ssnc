@@ -51,7 +51,7 @@ module "eks_worker" {
 
 data "aws_eks_cluster" "eks_cluster" {
   name = "eks_cluster"
-  depends_on = [ module.eks_master ]
+  depends_on = [ module.eks_master.eks_cluster ]
 }
 
 # eks monitoring and logging
