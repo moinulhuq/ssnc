@@ -17,5 +17,17 @@ pipeline {
                 }
             }
         }
+        stage("Deploy to EKS") {
+            steps {
+                script {
+                    dir('helloworldapp') {
+                        sh "aws eks update-kubeconfig --name eks_cluster"
+                        sh "kubectl apply -f helloworld-deployment.yaml"
+                        sh "kubectl apply -f helloworld-service.yaml"
+                    }
+                }
+            }
+        }
+
     }
 }
