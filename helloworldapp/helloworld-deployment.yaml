@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: helloworld
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -17,3 +17,15 @@ spec:
         image: dockercloud/hello-world
         ports:
         - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          timeoutSeconds: 2
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          timeoutSeconds: 2
