@@ -11,8 +11,8 @@ pipeline {
             steps {
                 script {
                     dir('terraform_code_for_eks') {
-                        sh "terraform init -upgrade"
-                        sh "terraform apply -auto-approve"
+                        sh "sudo terraform init -upgrade"
+                        sh "sudo terraform apply -auto-approve"
                     }
                 }
             }
