@@ -53,7 +53,7 @@ data "aws_eks_cluster" "eks_cluster" {
   name = "eks_cluster"
   depends_on = [ module.eks_master.eks_cluster ]
 }
-
+/*
 # eks monitoring and logging
 module "eks_monitoring_logging" {
   source = "shamimice03/eks-monitoring-logging/aws"
@@ -64,4 +64,5 @@ module "eks_monitoring_logging" {
   enable_cwagent    = true
   enable_fluent_bit = true
 }
+*/
 
