@@ -49,10 +49,14 @@ module "eks_worker" {
   allow_tls_eks           = module.data_vpc.allow_tls_eks
 }
 
+data "aws_eks_cluster" "eks_cluster" {
+  name = "eks_cluster"
+}
+
 # eks monitoring and logging
 module "eks_monitoring_logging" {
   source = "shamimice03/eks-monitoring-logging/aws"
-  cluster_name = module.eks_master.eks_cluster_name
+  cluster_name = data.aws_eks_cluster.eks_cluster.name
   aws_region   = local.region
   namespace    = var.amazon_cloudwatch_namespace
   enable_cwagent    = true
