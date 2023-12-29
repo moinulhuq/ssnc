@@ -43,8 +43,3 @@ variable "scaling_max_unavailable" {
   type    = number
   default = 1
 }
-
-variable "amazon_cloudwatch_namespace" {
-  type    = string
-  default = "amazon-cloudwatch"
-}
