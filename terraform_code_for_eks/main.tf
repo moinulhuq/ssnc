@@ -35,7 +35,7 @@ module "eks_master" {
 # Module eks worker
 module "eks_worker" {
   source                  = "./modules/eks_worker"
-  eks_cluster             = module.eks_master.eks_cluster
+  eks_cluster             = module.eks_master.eks_cluster.name
   subnet_ids              = [module.data_vpc.private_subnet_1.id, module.data_vpc.private_subnet_2.id]
   eks_node_group_name     = var.eks_node_group_name
   eks_capacity_type       = var.eks_capacity_type
