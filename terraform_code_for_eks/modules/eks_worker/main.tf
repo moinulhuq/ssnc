@@ -1,4 +1,3 @@
-
 # IAM for Eks cluster node group
 resource "aws_iam_role" "eks_worker" {
   name = "eks_worker"
@@ -111,7 +110,6 @@ resource "aws_eks_node_group" "node_grp" {
   depends_on = [
     aws_iam_role_policy_attachment.AmazonEKSWorkerNodePolicy,
     aws_iam_role_policy_attachment.AmazonEKS_CNI_Policy,
-    aws_iam_role_policy_attachment.AmazonEC2ContainerRegistryReadOnly,
-    # aws_subnet.private_subnet
+    aws_iam_role_policy_attachment.AmazonEC2ContainerRegistryReadOnly
   ]
 }
