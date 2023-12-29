@@ -85,7 +85,7 @@ resource "aws_iam_role_policy_attachment" "autoscaler" {
 
 # Eks cluster node group
 resource "aws_eks_node_group" "node_grp" {
-  cluster_name    = var.eks_cluster.name
+  cluster_name    = var.eks_cluster_name
   node_group_name = var.eks_node_group_name
   node_role_arn   = aws_iam_role.eks_worker.arn
   subnet_ids      = var.subnet_ids
