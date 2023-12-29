@@ -1,8 +1,3 @@
-
-# output "public_subnet" {
-#   value = var.public_subnet
-# }
-
 # IAM for Eks cluster
 resource "aws_iam_role" "eks_master" {
   name = "eks_master"
@@ -61,4 +56,3 @@ resource "aws_eks_cluster" "eks_cluster" {
   ]
 
 }
-
