@@ -12,7 +12,7 @@ pipeline {
                 script {
                     dir('terraform_code_for_eks') {
                         sh "terraform init -upgrade"
-                        sh "terraform apply -auto-approve"
+                        sh "terraform destroy -auto-approve"
                     }
                 }
             }
